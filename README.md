@@ -1,5 +1,5 @@
-# UC San Diego
-MicroMasters Program in Algorithms &amp; Data Structures
+# UCSD Algorithms
+### MicroMasters Program in Algorithms &amp; Data Structures
 
 
 ## Learning Goals
