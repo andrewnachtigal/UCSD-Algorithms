@@ -1,5 +1,6 @@
 # UCSD Algorithms
-## MicroMasters Program in Algorithms &amp; Data Structures
+
+**MicroMasters Program in Algorithms &amp; Data Structures**
 
 ----
 
