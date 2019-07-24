@@ -1,1 +1,1 @@
-![](../art/gcd.png?raw=true)
+![](../../art/gcd.png?raw=true)
