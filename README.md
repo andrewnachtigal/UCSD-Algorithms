@@ -1,5 +1,5 @@
 ![](art/ucsdx-logo12012015-200x101.png?raw=true)
-![](art/ucsd-mm-logo-blue.png?raw=true | width=100)
+![](art/ucsd-mm-logo-blue.png =width=100)
 
 # Program in Algorithms and Data Structures
 
