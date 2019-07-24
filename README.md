@@ -1,9 +1,7 @@
-# UCSD Algoritms
-![](art/edX_logo.png?raw=true)
 ![](art/ucsdx-logo12012015-200x101.png?raw=true)
-![](art/ucsd-mm-logo-blue.png?raw=true)
+![](art/ucsd-mm-logo-blue.png?raw=true | width=100)
 
-Program in Algorithms and Data Structures
+# Program in Algorithms and Data Structures
 
 ----
 
@@ -14,3 +12,5 @@ Learning Goals
 * Test and debug your code even without knowing the input on which it fails
 * Formulate real life computational problems as rigorous algorithmic problems
 * Prove correctness of an algorithm and analyze its running time
+
+![](art/edX_logo.png?raw=true)
