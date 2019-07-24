@@ -5,7 +5,7 @@
 
 ----
 
-Learning Goals
+## Learning Goals
 
 * Understand essential algorithmic techniques and apply them to solve algorithmic problems
 * Implement programs that work in less than one second even on massive datasets

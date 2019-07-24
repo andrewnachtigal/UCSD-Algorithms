@@ -6,3 +6,6 @@
 * Greedy Algorithms
 * Divided-and-Conquer
 * Dynamic Programming
+
+
+![](../art/gcd.png?raw=true)
