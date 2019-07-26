@@ -1,6 +1,6 @@
-# Efficient Algorithm for Fibonacci numbers
+#!/user/bin/python
 
-'''FibonacciIterative(n)
+'''FibonacciList(n)
     create an array F[0... n]
     F[0] <- 0
     F[1] <- 1
@@ -19,7 +19,6 @@ def fibonacci_recurs(n):
 
 
 def fibonacci_iter(n):
-    # create an array F[0...n]
     fib = []
     fib.append(0)
     fib.append(1)
