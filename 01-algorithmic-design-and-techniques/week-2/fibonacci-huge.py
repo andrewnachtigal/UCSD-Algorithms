@@ -11,11 +11,11 @@
         ...
 
         A Pisano period is the period of an integer sequence which is
-        obtained by reducing each term of a primary sequence modulo some integer
-        m ≥ 1.
+        obtained by reducing each term of a primary sequence modulo some
+        integer m ≥ 1.
 
-        The Pisano period is defined as the length of the period of the sequence obtained
-        by reading the Fibonacci sequence modulo m
+        The Pisano period is defined as the length of the period of the
+        sequence obtained by reading the Fibonacci sequence modulo m
 
 
 
@@ -38,11 +38,13 @@ def get_fibonacci_huge_naive(n, m):
 
 
 def get_fibonacci_huge_fast(n, m):
-    '''Calculate length of Pisano Period given m:
+    '''Pisano Number
+    calculate length of Pisano Period given m.
+    calculate pisano numners until cycle is determined.
 
-
-
+        p[n+1] = (p[n] + p[n-1]) % m
     '''
+
 
     return current % m
 
