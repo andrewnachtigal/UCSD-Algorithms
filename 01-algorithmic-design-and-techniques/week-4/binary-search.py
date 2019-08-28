@@ -10,20 +10,22 @@ import sys
 import math
 
 def binary_search(a, x):
-    left, right = 0, len(a)
-    # write your code here
-    if a[0] < x:
+    low, high = 0, len(a)-1
+
+    if high < low:
         return -1
 
-    mid = math.floor(a[0] + (a[n] - a[0])/2)
+    while low <= high:
+        mid = math.floor(low + (high - low)/2)
+        if a[mid] == x:
+            return mid
+        elif a[mid] < x:
+            low = mid + 1
+        elif a[mid] > x:
+            high = mid - 1
+        else:
+            return -1
 
-    if x = a[mid]:
-        return mid
-    else:
-
-
-    for i in range(len(a)):
-        if a[i] <= x:
 
 
 def linear_search(a, x):
@@ -39,5 +41,5 @@ if __name__ == '__main__':
     m = data[n + 1]
     a = data[1 : n + 1]
     for x in data[n + 2:]:
-        # replace with the call to binary_search when implemented
-        print(linear_search(a, x), end = ' ')
+        print(binary_search(a, x), end = ' ')
+        #print(linear_search(a, x), end = ' ')
