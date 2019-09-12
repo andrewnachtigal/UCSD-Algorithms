@@ -1,7 +1,8 @@
 #!/user/bin/python
 
 '''Majority Element
-
+Decision rule that selects the alternative which has a majority of votes.
+Check whether an element appears more than n/2 times.
 
 '''
 
@@ -13,6 +14,16 @@ def get_majority_element(a, left, right):
     if left + 1 == right:
         return a[left]
     #write your code here
+    for i in range(0, n):
+        currentElem = a[i]
+        count = 0
+        for j in range(0, n):
+            if a[j] == currentElem:
+                count = count + 1
+        if count > n/2:
+            return a[i]
+    # return('no majority element')
+
     return -1
 
 if __name__ == '__main__':
