@@ -1,8 +1,15 @@
 #!/user/bin/python
 
-'''Sorting
+'''Sorting - Quick Sort
 
-Implement ...
+Quicksort (partition-exchange sort)
+
+1. choose any element of the array to be the pivot.
+2. divide all other elements into two partitions
+ * all elements less than the pivot in the left partition
+ * all elements greater than the pivot in the right partition
+3. use recursion to sort both partitions
+4. join the left sorted partition, pivot, and right sorted partition
 
 '''
 
@@ -11,8 +18,22 @@ import sys
 import random
 
 def partition3(a, l, r):
-    #write your code here
-    pass
+    x = a[l]
+    j = l
+    t = l
+    i = j
+
+    for i in range(l+1, r+1):
+        if a[i] < x:
+            a[i], a[j] = a[j], a[i]
+            a[i], a[t+1] = a[t+1], a[i]
+            j += 1
+            t += 1
+        elif a[i] == x:
+            a[i], a[t+1] = a[t+1], a[i]
+            t += 1
+    return j, t
+    
 
 def partition2(a, l, r):
     x = a[l]
