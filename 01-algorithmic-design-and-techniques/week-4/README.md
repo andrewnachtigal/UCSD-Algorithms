@@ -2,5 +2,6 @@
 
 ...
 
-![](../../art/bst-anatomy.png?raw=true)
+Merge Sort
+
 ![](../../art/Merge_sort_algorithm_diagram.svg.png?raw=true)
