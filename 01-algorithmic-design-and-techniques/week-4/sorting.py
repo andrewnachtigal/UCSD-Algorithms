@@ -22,7 +22,6 @@ def partition3(a, l, r):
     j = l
     t = l
     i = j
-
     for i in range(l+1, r+1):
         if a[i] < x:
             a[i], a[j] = a[j], a[i]
@@ -33,7 +32,7 @@ def partition3(a, l, r):
             a[i], a[t+1] = a[t+1], a[i]
             t += 1
     return j, t
-    
+
 
 def partition2(a, l, r):
     x = a[l]
@@ -51,10 +50,11 @@ def randomized_quick_sort(a, l, r):
         return
     k = random.randint(l, r)
     a[l], a[k] = a[k], a[l]
+    #m = partition2(a, l, r)
     #use partition3
-    m = partition2(a, l, r)
-    randomized_quick_sort(a, l, m - 1);
-    randomized_quick_sort(a, m + 1, r);
+    m1, m2 = partition3(a, l, r)
+    randomized_quick_sort(a, l, m1 - 1);
+    randomized_quick_sort(a, m2 + 1, r);
 
 
 if __name__ == '__main__':
