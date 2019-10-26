@@ -1,7 +1,7 @@
-### Divide and Conquer Algorithms
+### Dynamic Programming
 
 ...
 
-Merge Sort
+Shortest Path in a Graph
 
-![](../../art/Merge_sort_algorithm_diagram.svg.png?raw=true)
+![](../../art/shortest-path-dp.png?raw=true)
