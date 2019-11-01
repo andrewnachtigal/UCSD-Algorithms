@@ -2,6 +2,6 @@
 
 ...
 
-Shortest Path in a Graph
+Partial recursion tree for string “abcde” in worst case.
 
-![](../../art/shortest-path-dp.png?raw=true)
+![](../../art/wordBreak1.png?raw=true)
