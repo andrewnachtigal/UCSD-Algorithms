@@ -1,4 +1,4 @@
-# UCSD Data Structures Fundamentals - Week 1
+### UCSD Data Structures Fundamentals - Week 1
 
 ----
 
