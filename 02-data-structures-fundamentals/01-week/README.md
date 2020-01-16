@@ -1,11 +1,10 @@
-### UCSD Data Structures Fundamentals - Week 1
+## UCSD Data Structures Fundamentals - Week 1
 
 ----
 
-## Learning Goals
-* Stacks Queues
+### Learning Goals
+* Arrays & Linked Lists
+* Stacks & Queues
 * Trees
-* Binary Trees
-
 
 ![](../art/binary_tree.jpg?raw=true)
