@@ -7,4 +7,4 @@
 * Stacks & Queues
 * Trees
 
-![](../art/binary_tree.jpg?raw=true)
+![](../../art/binary_tree.jpg?raw=true)
