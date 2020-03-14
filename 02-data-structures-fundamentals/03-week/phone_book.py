@@ -2,12 +2,20 @@
 
 '''Phone Book
 
-Implement a simple phone book manager.
+Implement a simple phone book manager that can process the following user
+queries:
 
-
+∙ add number name - add a person with name (name) and phone number (number) to
+    the phone book. If the name and number exists already, the manager
+    overwrites the corresponding name.
+∙ del number - the manager erases the name with number (number) from the phone
+    book. If there is no such name, it ignores the query.
+∙ find number - look for a person with phone number (number). The manager
+    replies with the appropriate name, or with string “not found".
 
 '''
 
+''' naive query
 class Query:
     def __init__(self, query):
         self.type = query[0]
@@ -52,3 +60,43 @@ def process_queries(queries):
 
 if __name__ == '__main__':
     write_responses(process_queries(read_queries()))
+'''
+
+class PhoneBook:
+    def __init__(self):
+        self.n = 0
+        self.queries = []
+        self.book = [None] * (10 ** 7)
+
+    def add(self, number, name):
+        self.book[number] = name
+
+    def delete(self, number):
+        self.book[number] = None
+
+    def find(self, number):
+        name = self.book[number]
+        if not name:
+            return 'not found'
+        else:
+            return name
+
+    def solve(self):
+        self.n = int(input())
+        self.queries = [input() for i in range(self.n)]
+        self.processQueries()
+
+    def processQueries(self):
+        for query in self.queries:
+            q = query.split()
+            command, number = q[0], int(q[1])
+            if command == 'add':
+                self.add(number, q[2])
+            elif command == 'del':
+                self.delete(number)
+            else:
+                print(self.find(number))
+
+if __name__ == '__main__':
+    x = PhoneBook()
+    x.solve()
