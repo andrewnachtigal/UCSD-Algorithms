@@ -12,7 +12,7 @@ and 𝑥 = 263.
 
 Support the following types of queries:
 
-add string — insert string into the table. If there is already such string in
+∙ add string — insert string into the table. If there is already such string in
     the hash table, then just ignore the query.
 ∙ del string — remove string from the table. If there is no such string in the
     hash table, then just ignore the query.
@@ -44,10 +44,40 @@ class QueryProcessor:
         self.elems = []
 
     def _hash_func(self, s):
+        '''Hash function.'''
         ans = 0
         for c in reversed(s):
             ans = (ans * self._multiplier + ord(c)) % self._prime
         return ans % self.bucket_count
+
+    def add(self, string):
+        '''Insert string into the table or ignore.'''
+        hashed = self._hash_func(string)
+        bucket = self.bucket[hashed]
+        if string not in bucket:
+            self.buckets[hashed] = [string] + bucket
+
+    def delete(self, string):
+        '''Remove string from the table or ignore.'''
+        hashed = self._hash_func(string)
+        bucket = self.bucket[hashed]
+        for i in range(len(bucket)):
+            if bucket[i] == string:
+                bucket.pop(i)
+                break
+
+    def find(self, string):
+        '''Output yes or no depending on whether the table contains string.'''
+        hashed = self._hash_func(string)
+        if string in self.buckets[hashed]:
+            return "yes"
+        return "no"
+
+    def check(self, i):
+        '''Output the content of the 𝑖-th list in the table. If 𝑖-th list is
+            empty, output a blank line.'''
+        return self.buckets[i]
+
 
     def write_search_result(self, was_found):
         print('yes' if was_found else 'no')
