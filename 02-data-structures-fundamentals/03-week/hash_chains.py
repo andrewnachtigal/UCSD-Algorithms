@@ -1,4 +1,4 @@
-#!/usr/bin/python3
+#!/usr/bin/env python3
 
 '''Hashing with Chains
 
@@ -41,7 +41,7 @@ class QueryProcessor:
     def __init__(self, bucket_count):
         self.bucket_count = bucket_count
         # store all strings in one list
-        self.elems = []
+        self.el-ms = [ [] for _ in range(0, bucket_count)]
 
     def _hash_func(self, s):
         '''Hash function.'''
@@ -50,7 +50,7 @@ class QueryProcessor:
             ans = (ans * self._multiplier + ord(c)) % self._prime
         return ans % self.bucket_count
 
-    def add(self, string):
+    """def add(self, string):
         '''Insert string into the table or ignore.'''
         hashed = self._hash_func(string)
         bucket = self.bucket[hashed]
@@ -76,8 +76,7 @@ class QueryProcessor:
     def check(self, i):
         '''Output the content of the 𝑖-th list in the table. If 𝑖-th list is
             empty, output a blank line.'''
-        return self.buckets[i]
-
+        return self.buckets[i]"""
 
     def write_search_result(self, was_found):
         print('yes' if was_found else 'no')
@@ -90,9 +89,27 @@ class QueryProcessor:
 
     def process_query(self, query):
         if query.type == "check":
-            # use reverse order, because we append strings to the end
+            """use reverse order, because we append strings to the end
             self.write_chain(cur for cur in reversed(self.elems)
-                        if self._hash_func(cur) == query.ind)
+                        if self._hash_func(cur) == query.ind)"""
+            self.write_chain(reversed(self.elems[query.ind]))
+
+        else:
+            hash_ = self._hash_func(query.s)
+            try:
+                ind = self.elems[hash_].index(query.s)
+            except ValueError:
+                ind = -1
+            if query.type == 'find':
+                self.write_search_result(ind!=-1)
+            elif query.type == 'add':
+                if ind == -1:
+                    self.elems[hash_].append(query.s)
+            else:
+                if ind != -1:
+                    self.elems[hash_].pop(ind)
+
+        """
         else:
             try:
                 ind = self.elems.index(query.s)
@@ -105,7 +122,7 @@ class QueryProcessor:
                     self.elems.append(query.s)
             else:
                 if ind != -1:
-                    self.elems.pop(ind)
+                    self.elems.pop(ind)"""
 
     def process_queries(self):
         n = int(input())
