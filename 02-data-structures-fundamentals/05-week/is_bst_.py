@@ -12,30 +12,53 @@ For any node of the left subtree its key must be strictly less than 𝑥, and fo
 any node in its right subtree its key must be strictly greater than 𝑥.
 """
 
-
 import sys
 import threading
 
-sys.setrecursionlimit(10**7) # max depth of recursion
+sys.setrecursionlimit(10**6) # max depth of recursion
 threading.stack_size(2**27)  # new thread will get stack of such size
 
-def IsBinarySearchTree(j, mn, mx):
- if not j in tree:
-  return True
+max = None
+prev = -1
 
- if tree[j][0] < mn or tree[j][0] > mx:
-  return False
+def IsBST(tree):
+    if len(tree) in (0, 1):
+        return True
 
- return IsBinarySearchTree(tree[j][1], mn, tree[j][0] - 1) and \
-IsBinarySearchTree(tree[j][2], tree[j][0] + 1, mx)
+def inOrderWalk(tree, i):
+    global max
+    global prev
+    if i == -1:
+        return True
+
+    last = 1
+    if not inOrderWalk(tree, tree[i][1]):
+        return False
+
+    if max is None or max < tree[i][0]:
+        max = tree[i][0]
+    elif max == tree[i][0] and last == 1:
+        max = tree[i][0]
+    else:
+        return False
+
+    last = 2
+    if not inOrderWalk(tree, tree[i][2]):
+        return False
+
+    return True
+
+    if inOrderWalk(tree, 0):
+        return True
+
 
 def main():
   nodes = int(sys.stdin.readline().strip())
-  global tree
-  tree, int_max, int_min = {}, 2147483647, -2147483648
+  tree = []
+  #tree, int_max, int_min = {}, 2147483647, -2147483648
   for i in range(nodes):
-    tree[i] = (list(map(int, sys.stdin.readline().strip().split())))
-  if IsBinarySearchTree(0, int_min, int_max):
+      tree.append(list(map(int, sys.stdin.readline().strip().split())))
+  if IsBST(tree):
     print("CORRECT")
   else:
     print("INCORRECT")
