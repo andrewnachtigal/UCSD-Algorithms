@@ -1,6 +1,6 @@
 #!/usr/bin/python3
 
-"""Check whether binary search tree
+"""Check whether binary search tree - general case
 
 Test whether a binary search tree data structure is implemented correctly.
 
